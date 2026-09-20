@@ -32,7 +32,7 @@ export default function PublicDosenPage() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const { data } = await supabase.from('dosen').select('*').order('nip', { ascending: true })
+      const { data } = await supabase.from('dosen').select('*').order('created_at', { ascending: true })
       if (data) setListDosen(data)
     }
     fetchData()
